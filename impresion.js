@@ -37,7 +37,7 @@ document.getElementById('download-pdf').addEventListener('click', function () {
                 },
                 jsPDF: {
                     unit: 'mm',
-                    format: [615.9, 655.6], // Tamaño Oficio (Legal) en mm (215.9 x 355.6)
+                    format: [415.9, 655.6], // Tamaño Oficio (Legal) en mm (215.9 x 355.6)
                     orientation: 'portrait',
                     pagesplit: false // Desactivamos la paginación para que todo quede en una sola página
                 }
