@@ -20,7 +20,7 @@ header h1,
 header h2 {
     font-weight: normal;
     line-height: 1;
-}ter
+}
 
 header h2{
     margin-top: 5px;
@@ -54,9 +54,9 @@ h4{
 }
 
 hr.custom-line {
-    width: 50%; /* Longitud de la línea (ajústala como desees) */
-    border: 0.5px dashed #fff; /* Línea punteada */
-    margin: 3px auto; /* Centra la línea y le da espacio arriba y abajo */
+    width: 50%; 
+    border: 0.5px dashed #fff; 
+    margin: 3px auto; 
 }
 
 ul{
@@ -168,7 +168,7 @@ ul{
 
 .pdf-btn i {
     margin: 5px auto;
-    font-size: 2em; /* Este valor será relativo al tamaño del botón */
+    font-size: 2em;
 }
 
 .contenedor_foto_perfil{
@@ -246,13 +246,9 @@ ul{
     margin-top: 1%;
 }
 
-.habilidad {
-    display: inline-block;
- 
+.habilidad { 
     text-decoration: underline;
     text-align: center;
-
-    
 }
 
 .experiencia {
@@ -273,7 +269,7 @@ ul{
 }
 
 .nombre_empresa span {
-    font-size: 0.8em; /* Ajusta el tamaño de fuente a un 80% del tamaño original */
+    font-size: 0.8em; 
 }
 .año_puesto {
     display: inline-block;
@@ -322,7 +318,7 @@ li{
     background-image: url("Img/EOC.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position-y: -55px; /* Esto moverá la imagen hacia la parte superior izquierda */
+    background-position-y: -55px;
     opacity: 0.28;
     z-index: -1;
 }
@@ -342,7 +338,7 @@ li{
 
 
 .pie_contactos .contacto-datos a:hover a {
-    color: #007bff; /* Color al pasar el ratón */
+    color: #007bff;
 }
 
 .pie_contactos .contacto-datos .email-laboral i {
@@ -389,7 +385,7 @@ border: 7px solid #5106e8;
 }
 
 .copy-btn:hover i {
-    color: #007bff; /* Color al pasar el ratón */
+    color: #007bff; 
 }
 
 /*.descarga{
@@ -401,25 +397,25 @@ border: 7px solid #5106e8;
 }*/
 
 .descarga {
-    position: fixed; /* Fija el div en la pantalla */
-    top: 45px; /* Ajusta el espacio desde la parte superior */
-    right: 40px; /* Ajusta el espacio desde el lado derecho */
-    z-index: 1000; /* Asegura que el div esté por encima de otros elementos */
-    background-color: #fff; /* Fondo blanco */
-    border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Sombra */
-    display: flex; /* Usamos flexbox */
-    flex-direction: column; /* Acomoda el contenido en columna (icono arriba y texto abajo) */
-    align-items: center; /* Centra los elementos horizontalmente */
-    justify-content: center; /* Centra los elementos verticalmente (si es necesario) */
-    text-align: center; /* Asegura que el texto también esté centrado */
+    position: fixed; 
+    top: 45px; 
+    right: 40px; 
+    z-index: 1000; 
+    background-color: #fff; 
+    border-radius: 8px; 
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
 }
 
 .descarga h6 {
-    margin: 5px 0 0 0; /* Ajusta el margen del texto debajo del botón */
-    font-size: 12px; /* Tamaño de fuente ajustable */
+    margin: 5px 0 0 0; 
+    font-size: 12px; 
     color: #000;
-    transition: color 0.3s; /* Agrega transición suave al cambio de color */
+    transition: color 0.3s; 
 }
 
 .pdf1-btn {
@@ -429,9 +425,9 @@ border: 7px solid #5106e8;
     padding: 10px 20px;
     align-items: center;
     justify-content: center;
-    cursor: pointer; /* Asegura que el puntero cambie al pasar sobre el botón */
+    cursor: pointer; 
     transition: 0.3s;
-    border-radius: 8px; /* Bordes redondeados */
+    border-radius: 8px; 
 }
 
 .pdf1-btn i {
@@ -454,5 +450,5 @@ border: 7px solid #5106e8;
 }
 
 .pdf1-btn:hover h6 {
-    color: #5106e8; /* Ilumina el texto cuando se pasa el ratón sobre el botón */
+    color: #5106e8;
 }
