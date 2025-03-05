@@ -1,3 +1,4 @@
+//Impresion PDF
 document.getElementById('download-pdf').addEventListener('click', function () {
     const $elementoParaConvertir = document.getElementById('content'); 
 
@@ -52,3 +53,51 @@ document.getElementById('download-pdf').addEventListener('click', function () {
 
     }, 2000); 
 });
+
+
+//Copiar Enlaces
+// Esperamos a que el documento esté completamente cargado
+document.addEventListener('DOMContentLoaded', function() {
+    // Seleccionamos todos los botones con la clase .copy-btn
+    const copyButtons = document.querySelectorAll('.copy-btn');
+    
+    // Añadimos el evento de clic a cada botón
+    copyButtons.forEach(function(button) {
+      button.addEventListener('click', function() {
+        // Obtenemos el texto del atributo data-clipboard-text del botón
+        const textToCopy = button.getAttribute('data-clipboard-text');
+        
+        // Creamos un campo de texto temporal
+        const tempInput = document.createElement('input');
+        tempInput.value = textToCopy;
+        document.body.appendChild(tempInput);
+        
+        // Seleccionamos el texto y lo copiamos al portapapeles
+        tempInput.select();
+        document.execCommand('copy');
+        
+        // Eliminamos el campo de texto temporal
+        document.body.removeChild(tempInput);
+        
+        // Creamos el mensaje de carga
+        const loadingMessage = document.createElement('div');
+        loadingMessage.innerText = `${textToCopy} ...Se ha copiado al Portapapeles...`;
+        loadingMessage.style.position = 'fixed';
+        loadingMessage.style.top = '75%';
+        loadingMessage.style.left = '60%';
+        loadingMessage.style.transform = 'translate(-50%, -50%)';
+        loadingMessage.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+        loadingMessage.style.color = 'white';
+        loadingMessage.style.padding = '20px';
+        loadingMessage.style.borderRadius = '5px';
+        loadingMessage.style.zIndex = '9999';
+        document.body.appendChild(loadingMessage);
+        
+        // Después de 2 segundos (2000 ms), eliminamos el mensaje
+        setTimeout(function() {
+          document.body.removeChild(loadingMessage);
+        }, 2000);
+      });
+    });
+  });
+  
