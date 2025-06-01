@@ -222,7 +222,7 @@ ul{
     display: inline-block;
     vertical-align: top;
     background-color: #5106e8;
-    padding: 5% 5%;
+    padding: 2% 5% 2% 5%;
     width: 28%;
 }
 
@@ -254,7 +254,7 @@ ul{
 .experiencia {
     display: inline-block;
     vertical-align: middle;
-    padding: 5%;
+    padding: 1.45% 5% 2% 5%;
     width: 50%;
 }
 
