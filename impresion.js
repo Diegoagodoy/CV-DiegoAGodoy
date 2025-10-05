@@ -56,48 +56,45 @@ document.getElementById('download-pdf').addEventListener('click', function () {
 
 
 //Copiar Enlaces
-// Esperamos a que el documento esté completamente cargado
-document.addEventListener('DOMContentLoaded', function() {
-    // Seleccionamos todos los botones con la clase .copy-btn
-    const copyButtons = document.querySelectorAll('.copy-btn');
-    
-    // Añadimos el evento de clic a cada botón
-    copyButtons.forEach(function(button) {
-      button.addEventListener('click', function() {
-        // Obtenemos el texto del atributo data-clipboard-text del botón
-        const textToCopy = button.getAttribute('data-clipboard-text');
-        
-        // Creamos un campo de texto temporal
-        const tempInput = document.createElement('input');
-        tempInput.value = textToCopy;
-        document.body.appendChild(tempInput);
-        
-        // Seleccionamos el texto y lo copiamos al portapapeles
-        tempInput.select();
-        document.execCommand('copy');
-        
-        // Eliminamos el campo de texto temporal
-        document.body.removeChild(tempInput);
-        
-        // Creamos el mensaje de carga
-        const loadingMessage = document.createElement('div');
-        loadingMessage.innerText = `${textToCopy} ...Se ha copiado al Portapapeles...`;
-        loadingMessage.style.position = 'fixed';
-        loadingMessage.style.top = '75%';
-        loadingMessage.style.left = '60%';
-        loadingMessage.style.transform = 'translate(-50%, -50%)';
-        loadingMessage.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
-        loadingMessage.style.color = 'white';
-        loadingMessage.style.padding = '20px';
-        loadingMessage.style.borderRadius = '5px';
-        loadingMessage.style.zIndex = '9999';
-        document.body.appendChild(loadingMessage);
-        
-        // Después de 2 segundos (2000 ms), eliminamos el mensaje
-        setTimeout(function() {
-          document.body.removeChild(loadingMessage);
-        }, 2000);
-      });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const copyButtons = document.querySelectorAll('.copy-btn');
+
+  copyButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const text = btn.getAttribute('data-clipboard-text');
+
+      // Crear un textarea temporal
+      const temp = document.createElement('textarea');
+      temp.value = text;
+      temp.style.position = 'absolute';
+      temp.style.left = '-9999px';
+      document.body.appendChild(temp);
+
+      // Seleccionar y copiar
+      temp.select();
+      temp.setSelectionRange(0, temp.value.length);
+      const successful = document.execCommand('copy');
+
+      // Quitar textarea
+      document.body.removeChild(temp);
+
+      // Mensaje flotante
+      const msg = document.createElement('div');
+      msg.innerText = successful ? `"${text}" copiado al portapapeles` : `Error al copiar`;
+      msg.style.position = 'fixed';
+      msg.style.bottom = '20px';
+      msg.style.left = '50%';
+      msg.style.transform = 'translateX(-50%)';
+      msg.style.background = 'rgba(0,0,0,0.8)';
+      msg.style.color = '#fff';
+      msg.style.padding = '10px 15px';
+      msg.style.borderRadius = '6px';
+      msg.style.zIndex = '9999';
+      document.body.appendChild(msg);
+
+      setTimeout(() => msg.remove(), 1800);
     });
   });
-  
+});
+

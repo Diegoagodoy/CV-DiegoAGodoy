@@ -452,3 +452,16 @@ border: 7px solid #5106e8;
 .pdf1-btn:hover h6 {
     color: #5106e8;
 }
+
+.Cv-Digital {
+    position: absolute; 
+    top: 82px; 
+    right: 220px; 
+    z-index: 1000; 
+    font-size: 1em;
+    color: #5106e8;
+}
+
+.Cv-Digital a:hover{
+    color: #ffffff;
+}
